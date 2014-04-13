@@ -1,0 +1,15 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "ParaderosStore",
+        "model": "ParaderosModel",
+        "storeId": "ParaderosStore"
+    },
+    "designerId": "8228f8bb-3e3d-467d-bd1c-bc12210c7636"
+}

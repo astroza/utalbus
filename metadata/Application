@@ -1,0 +1,37 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "Navigation"
+        ],
+        "models": [
+            "ParaderosModel",
+            "DevicesModel",
+            "TrackpointsModel"
+        ],
+        "name": "UTalBus",
+        "stores": [
+            "ParaderosStore",
+            "DevicesStore",
+            "TrackpointsStore"
+        ],
+        "views": [
+            "MainView",
+            "HomePanel",
+            "AboutPanel",
+            "ContactPanel",
+            "NavMenu",
+            "DevicePanel",
+            "ParaderosPanel",
+            "DevicesPanel",
+            "ParaderoPanel",
+            "DeviceDetails"
+        ]
+    },
+    "designerId": "application"
+}

@@ -1,0 +1,69 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "homepanel",
+        "designer|userClassName": "HomePanel",
+        "itemId": "homePanel",
+        "padding": 10,
+        "scrollable": "vertical",
+        "styleHtmlContent": true
+    },
+    "designerId": "47ef6249-3f18-4759-9212-5919357abe2b",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "this.setHtml(this.getTpl().applyTemplate(this));"
+                ]
+            },
+            "designerId": "6945f160-da75-424a-98b8-7c3b9bacd377"
+        },
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "<h1>UTalBus</h1>",
+                    "<h4>version 0.2</h4>",
+                    "Mejoras para la version 0.3",
+                    "<ul>",
+                    "<li>",
+                    "Lista de paraderos actualizada",
+                    "</li>",
+                    "<li>",
+                    "Estimación de llegada a cada paradero",
+                    "</li>",
+                    "</ul>",
+                    "Mejoras para la version 0.4",
+                    "<ul>",
+                    "<li>Estimación de llegada a posición actual (usando geolocalización del teléfono)",
+                    "</li>",
+                    "</ul>",
+                    "Puedes encontrar mas información del proyecto <a href=\"https://wiki.iccutal.cl/wiki/UTalGPS\">aquí</a>",
+                    "</br>",
+                    "</br>",
+                    "(C) 2013 - Los Niches Initiative"
+                ]
+            },
+            "designerId": "76c0b046-37d8-4ebd-a647-efc97fc8048b"
+        }
+    ]
+}

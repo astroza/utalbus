@@ -1,0 +1,75 @@
+{
+    "name": "UTalBus",
+    "settings": {
+        "cmd": {
+            "license": "gpl",
+            "cmdVersion": "4.0.4.84",
+            "frameworkVersion": "2.3.1.410"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone 5",
+                "builtIn": true,
+                "height": 568,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost/UTalBus/",
+        "exportPath": "/Users/felipe/Devel/sencha",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "displayfield-ExtBox1-2064-inputEl": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        },
+        "displayfield-ExtBox1-1289-inputEl": "Not Installed"
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "touch23",
+    "viewOrderMap": {
+        "view": [
+            "faa0b672-f068-471f-a6d3-46b660667fb3",
+            "6b1d9070-b093-4ef5-9404-8efed4679c79",
+            "f122b302-f33f-44cd-90af-3a9292063adf",
+            "38f5b40f-a150-4b5c-aef0-c51c4eb05f73",
+            "1d4f1442-645c-44f2-b137-e69770295063",
+            "4661cf84-782b-464e-ab71-a5e87e9a9c8f",
+            "d7e54088-9032-47c5-915a-ad5aa6ed8ae2",
+            "a8947ed6-71f5-49bb-8930-d6398f053739",
+            "3396332d-cf66-412a-aee6-3e1a51c23ae2",
+            "47ef6249-3f18-4759-9212-5919357abe2b"
+        ],
+        "store": [
+            "8228f8bb-3e3d-467d-bd1c-bc12210c7636",
+            "4338714a-dc30-48e3-9d2e-6a58862f0c6e",
+            "f45a9ce1-d59c-4c01-a2ed-1b68077ac15b"
+        ],
+        "controller": [
+            "b65f72c1-bee5-4e5a-9fed-ce939650a75c"
+        ],
+        "model": [
+            "7b4668cf-2ffb-43a1-983b-d20c75d4c60f",
+            "7e04c30c-2dad-4218-af10-c421d10ea34d",
+            "6f06a01c-57eb-4608-8cc7-b0f253c942d0"
+        ],
+        "resource": [
+            "01dfa91f-d7fa-4c86-8272-a99995dea3d2",
+            "14cde95c-15a4-43c8-a631-61ec1e4da108",
+            "c39b8c59-ad48-49c5-ae32-326c1262eb64",
+            "2fcb12b0-5507-41e3-b0cd-d64849634f66"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

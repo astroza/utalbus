@@ -1,0 +1,32 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "contactpanel",
+        "designer|userClassName": "ContactPanel",
+        "html": "</br>&nbspProyecto financiado por la Vicerrectoria de </br>&nbspDesarrollo Estudiantil (VDE)</br>&nbsp;Si tienes alguna sugerencia puedes enviar</br>&nbsp;un correo a: fastroza@alumnos.utalca.cl",
+        "itemId": "contactPanel"
+    },
+    "designerId": "38f5b40f-a150-4b5c-aef0-c51c4eb05f73",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();"
+                ]
+            },
+            "designerId": "e4162966-dcdb-4bf7-a7f8-1d9ebc45d966"
+        }
+    ]
+}

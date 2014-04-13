@@ -1,0 +1,107 @@
+{
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TrackpointsStore",
+        "model": "TrackpointsModel",
+        "storeId": "TrackpointsStore"
+    },
+    "designerId": "f45a9ce1-d59c-4c01-a2ed-1b68077ac15b",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.JsonP",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "enablePagingParams": false,
+                "extraParams": [
+                    "{limit: 1}"
+                ],
+                "url": null
+            },
+            "designerId": "7e2ba63c-44f0-46c9-810d-10bb10232e73",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "e9e7b56d-9e0f-438b-9480-5e7039dc711b"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onJsonpstoreLoad",
+                "implHandler": [
+                    "if(successful) {",
+                    "    record = store.getAt(0);",
+                    "    tracking_extmap.setMapCenter({latitude: record.get('latitude'), longitude: record.get('longitude')});",
+                    "    var latlng = new google.maps.LatLng(record.get('latitude'), record.get('longitude'));",
+                    "    tracking_marker.setPosition(latlng);",
+                    "    velocity_field.setValue(Math.floor(record.get('velocity')) + \" km/h\");",
+                    "    var cur_latlng = new google.maps.LatLng(record.get('latitude'), record.get('longitude'));",
+                    "    geocoder.geocode({'latLng': cur_latlng}, function(results, status) {",
+                    "        if (status == google.maps.GeocoderStatus.OK && results[0])",
+                    "\t\tdevicedetails.setLocation(\"<font size=\\\"2\\\">La dirección mas cerca es: \" + results[0].formatted_address.split(\",\", 1) + \"</font>\");",
+                    "    });",
+                    "    var elapsed_seconds = (Date.now() - Date.parse(record.get('time')))/1000;",
+                    "    var time_unit;",
+                    "    var time_amount;",
+                    "    if(elapsed_seconds < 60) {",
+                    "        time_unit = \"segundos\";",
+                    "        time_amount = elapsed_seconds;",
+                    "    } else if(elapsed_seconds < 3600) {",
+                    "        time_unit = \"minutos\";",
+                    "        time_amount = elapsed_seconds/60;",
+                    "    } else if(elapsed_seconds < 86400) {",
+                    "        time_unit = \"horas\";",
+                    "        time_amount = elapsed_seconds/3600;",
+                    "    } else {",
+                    "        time_unit = \"dias\";",
+                    "        time_amount = elapsed_seconds/86400;",
+                    "    }",
+                    "    time_amount = Math.floor(time_amount);",
+                    "    time_string = new Date(Date.parse(record.get('time')));",
+                    "    var state = \"<font size=\\\"2\\\">\";",
+                    "    if(time_amount == 1) {",
+                    "        state += \"Ha pasado \";",
+                    "        time_unit = time_unit.substring(0, time_unit.length-1);",
+                    "    } else",
+                    "        state += \"Han pasado \";",
+                    "",
+                    "    state += time_amount + \" \" + time_unit + \" desde el último reporte recibido</br></br>Ultimo reporte: \" + time_string;",
+                    "    state += \"</font>\";",
+                    "    devicedetails.setState(state);",
+                    "    var jsonpstore = this;",
+                    "    if(track_device) {",
+                    "        if(window.update_timer !== undefined)",
+                    "            clearTimeout(update_timer);",
+                    "",
+                    "        update_timer = setTimeout(function() {",
+                    "            jsonpstore.load();",
+                    "        }, 3000);",
+                    "    }",
+                    "}"
+                ],
+                "name": "load"
+            },
+            "designerId": "d70b73a5-291d-4cfb-9a8d-b1befdcb11fb"
+        }
+    ]
+}

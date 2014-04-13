@@ -1,0 +1,66 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultBackButtonText": "",
+        "designer|initialView": true,
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "MainView",
+        "itemId": "mainView"
+    },
+    "designerId": "faa0b672-f068-471f-a6d3-46b660667fb3",
+    "cn": [
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "centered": false,
+                "container|align": "center",
+                "docked": "top",
+                "itemId": "navBar"
+            },
+            "designerId": "0f1bbba6-fd7c-4481-b01a-5619bf8837f8",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "action",
+                        "itemId": "menuButton",
+                        "text": "Menu"
+                    },
+                    "designerId": "4e669aad-cf0b-4bd8-bc1b-a90720ca5001"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "navi = this;",
+                    "this.push(Ext.create(\"UTalBus.view.HomePanel\"));"
+                ]
+            },
+            "designerId": "fc54a689-eb45-4812-b3d6-9702c8c8ceee"
+        }
+    ]
+}

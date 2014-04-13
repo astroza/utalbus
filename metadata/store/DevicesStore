@@ -1,0 +1,15 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "DevicesStore",
+        "model": "DevicesModel",
+        "storeId": "DevicesStore"
+    },
+    "designerId": "4338714a-dc30-48e3-9d2e-6a58862f0c6e"
+}

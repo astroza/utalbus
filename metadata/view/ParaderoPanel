@@ -1,0 +1,63 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ParaderoPanel"
+    },
+    "designerId": "a8947ed6-71f5-49bb-8930-d6398f053739",
+    "cn": [
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "data": null,
+                "docked": "top",
+                "height": 21,
+                "html": "(Nombre)"
+            },
+            "designerId": "dfcce65c-6b56-44fe-998e-3adf0a05fe1c"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "this.items.getAt(0).setHtml(\"<h2>&nbsp;\"+this.config.bus_stop.get('name')+\"</h2>\");",
+                    "map = this.items.getAt(1);",
+                    "map.setMapCenter({latitude: this.config.bus_stop.get('latitude'), longitude: this.config.bus_stop.get('longitude')});",
+                    ""
+                ]
+            },
+            "designerId": "77ef583a-6779-487e-a35c-a833de11dfa7"
+        },
+        {
+            "type": "Ext.Map",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 200,
+                "mapOptions": [
+                    "{zoom: 18, draggable: true, disableDefaultUI: true}"
+                ]
+            },
+            "designerId": "bd83d7dc-ff97-4dac-bfcf-ab4ece09ff2b"
+        }
+    ]
+}

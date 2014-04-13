@@ -1,0 +1,74 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "aboutpanel",
+        "designer|userClassName": "AboutPanel",
+        "itemId": "aboutPanel",
+        "padding": 10,
+        "scrollable": "vertical",
+        "styleHtmlContent": true
+    },
+    "designerId": "f122b302-f33f-44cd-90af-3a9292063adf",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "this.setHtml(this.getTpl().applyTemplate(this));"
+                ]
+            },
+            "designerId": "f2d9bba6-d962-4adc-b6b9-bbc078622681"
+        },
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "tpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "tpl",
+                "implHandler": [
+                    "<img src=\"http://www.educandus.cl/imagenes_dta/logo_utalca.jpg\"></img>",
+                    "<div><p>Este proyecto recibió apoyo de:</p>",
+                    "    <ul>",
+                    "        <li>La escuela de Ingenieria Civil en Computación: Servidor y costos operativos</li>",
+                    "        <li>La Vicerrectoria de Desarrollo Estudiantil: Equipos rastreadores</li>",
+                    "    </ul>",
+                    "</div>",
+                    "<div><h2>Creditos</h2>",
+                    "    <ul><h3>Programadores</h3>",
+                    "        <li>Felipe Astroza Araya</li>",
+                    "        <li>Fernando Torres Muñoz</li>",
+                    "        <li>Alex Muñoz Muñoz</li>",
+                    "    </ul>",
+                    "</div>",
+                    "    <ul><h3>Pruebas de software</h3>",
+                    "        <li>Fernando Torres</li>",
+                    "        <li>Alex Muñoz Muñoz</li>",
+                    "    </ul>",
+                    "    <ul><h3>Coordinación y redacción</h3>",
+                    "        <li>Marianela Iturriaga Jiménez</li>",
+                    "        <li>Alex Muñoz Muñoz</li>",
+                    "    </ul>",
+                    "    <ul><h3>Colaboradores adicionales</h3>",
+                    "        <li>Hernan Garrido Arce</li>",
+                    "    </ul>"
+                ]
+            },
+            "designerId": "65678e2a-4e64-4aa6-9f25-8b078280824e"
+        }
+    ]
+}

@@ -1,0 +1,173 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicepanel",
+        "designer|userClassName": "DevicePanel",
+        "layout": "vbox"
+    },
+    "designerId": "1d4f1442-645c-44f2-b137-e69770295063",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "center",
+                "designer|displayName": "MapTools",
+                "docked": "bottom"
+            },
+            "designerId": "9a6fa6d5-e2e7-4cc3-a0a4-563d47579fe6",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "border": null,
+                        "docked": null,
+                        "label": "Velocidad:",
+                        "labelWidth": "48%",
+                        "labelWrap": true,
+                        "readOnly": true,
+                        "width": 200
+                    },
+                    "designerId": "921c52ea-74e4-4faa-8d9a-f7231a3dff3a"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "right",
+                        "height": 44,
+                        "iconCls": "info",
+                        "itemId": "mybutton5",
+                        "text": "Detalles",
+                        "width": 118
+                    },
+                    "designerId": "23c8c0a4-8fe4-4160-8949-9ad306886d18",
+                    "cn": [
+                        {
+                            "type": "delegateeventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "panel"
+                                ],
+                                "designer|targetType": "DevicePanel",
+                                "fn": "onPanelTap",
+                                "implHandler": [
+                                    "this.details.showBy(panel);"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "547a5d4f-3255-4137-b661-2e5ddcd3e17f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.Map",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Map",
+                "docked": "bottom",
+                "geo": null,
+                "height": "90%",
+                "itemId": "mymap",
+                "mapOptions": [
+                    "{center: {latitude: -35.001624, longitude: -71.230127}, zoom: 18, disableDoubleClickZoom: true, maxZoom: 18, minZoom: 10, disableDefaultUI: true, draggable: false}"
+                ]
+            },
+            "designerId": "10e2ffa5-bc44-4a51-80f7-2ad364834d1b"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "tracking_extmap = this.items.getAt(1);",
+                    "geocoder = new google.maps.Geocoder();",
+                    "Ext.onReady(function() {",
+                    "tracking_marker = new google.maps.Marker({",
+                    "\tmap: tracking_extmap.getMap(),",
+                    "\ttitle: \"Vehicle\",",
+                    "    icon: \"http://gps.iccutal.cl/bus.png\"",
+                    "});",
+                    "});"
+                ]
+            },
+            "designerId": "00aec5fa-b4ad-454c-a27b-439f489c9c84"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelPainted",
+                "implHandler": [
+                    "track_device = true;",
+                    "items = this.items;",
+                    "store = Ext.getStore(\"TrackpointsStore\");",
+                    "store.getProxy().setUrl(\"http://gps.iccutal.cl/devices/\"+device_record.get('id')+\"/trackpoints.json\");",
+                    "tracking_marker.setTitle(device_record.get('name'));",
+                    "store.load();",
+                    ""
+                ],
+                "name": "painted"
+            },
+            "designerId": "db1acb39-176a-40f4-aa49-b6641618ae76"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "velocity_field = this.items.getAt(0).getAt(0);",
+                    "this.details = Ext.create('UTalBus.view.DeviceDetails');",
+                    "details = this.details;",
+                    ""
+                ],
+                "name": "initialize"
+            },
+            "designerId": "eb4079a1-b29e-4968-bb9f-ce0c91dc24fa"
+        }
+    ]
+}

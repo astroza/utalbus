@@ -1,0 +1,93 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "designer|userAlias": "devicedetails",
+        "designer|userClassName": "DeviceDetails",
+        "height": 170,
+        "hidden": false,
+        "hideOnMaskTap": true,
+        "itemId": "deviceDetails",
+        "modal": true,
+        "padding": null,
+        "width": 200
+    },
+    "designerId": "3396332d-cf66-412a-aee6-3e1a51c23ae2",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": null,
+                "docked": "top",
+                "height": 150
+            },
+            "designerId": "19e7c660-7ed1-4d8f-b98d-fdc924908f31",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": null,
+                        "height": null,
+                        "html": "",
+                        "padding": 5,
+                        "title": "Locación"
+                    },
+                    "designerId": "d25f97a9-98c9-474a-a4e0-a09bec20c534"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|createAlias": null,
+                        "padding": 5,
+                        "title": "Estado"
+                    },
+                    "designerId": "e3c22fbe-fea3-4a68-b58a-5c6ecd33e4ff"
+                }
+            ]
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initialize",
+                "implHandler": [
+                    "this.callParent();",
+                    "this.setLocation = function(html) {",
+                    "    this.getAt(0).getAt(0).setHtml(html);",
+                    "};",
+                    "",
+                    "this.setState = function(html) {",
+                    "    this.getAt(0).getAt(2).setHtml(html);",
+                    "};",
+                    "",
+                    "devicedetails = this;"
+                ]
+            },
+            "designerId": "0b6af7c7-756d-4812-8571-a395153a59f6"
+        }
+    ]
+}

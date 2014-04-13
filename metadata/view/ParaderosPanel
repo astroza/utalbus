@@ -1,0 +1,74 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "paraderospanel",
+        "designer|userClassName": "ParaderosPanel"
+    },
+    "designerId": "4661cf84-782b-464e-ab71-a5e87e9a9c8f",
+    "cn": [
+        {
+            "type": "Ext.carousel.Carousel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "itemId": "mycarousel"
+            },
+            "designerId": "dd96920f-b32a-41c4-a409-9b4d837d7a4b",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "tpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "tpl",
+                        "implHandler": [
+                            "{name}"
+                        ]
+                    },
+                    "designerId": "c385eac1-fa09-4809-b252-cb8c69b340a7"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onMycarouselInitialize",
+                        "implHandler": [
+                            "var store = Ext.getStore(\"ParaderosStore\");",
+                            "var fill_carousel = function(carousel, store) {",
+                            "    store.each(function(record) {",
+                            "        var panel = new Ext.create(\"UTalBus.view.ParaderoPanel\", {bus_stop: record});",
+                            "        carousel.add(panel);",
+                            "    });",
+                            "};",
+                            "store.on(\"load\", function ()",
+                            "         {",
+                            "             fill_carousel(this, store);",
+                            "         }, this);",
+                            "if(store.loaded) {",
+                            "    fill_carousel(this, store);",
+                            "}"
+                        ],
+                        "name": "initialize"
+                    },
+                    "designerId": "f2dd9f82-6ed4-4751-8705-7bcee0ecf09f"
+                }
+            ]
+        }
+    ]
+}

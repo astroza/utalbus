@@ -1,0 +1,64 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "devicespanel",
+        "designer|userClassName": "DevicesPanel"
+    },
+    "designerId": "d7e54088-9032-47c5-915a-ad5aa6ed8ae2",
+    "cn": [
+        {
+            "type": "Ext.dataview.List",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "itemId": "mylist2",
+                "loadingText": "Cargando...",
+                "store": "DevicesStore"
+            },
+            "designerId": "22ed4999-a8bb-43c9-964e-6609723d28c2",
+            "cn": [
+                {
+                    "type": "Ext.XTemplate",
+                    "reference": {
+                        "name": "itemTpl",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "itemTpl",
+                        "implHandler": [
+                            "<div>{name}</div>"
+                        ]
+                    },
+                    "designerId": "6a474719-ab9c-484c-839d-b3457849da62"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelPainted",
+                "implHandler": [
+                    "track_device = false;",
+                    ""
+                ],
+                "name": "painted"
+            },
+            "designerId": "34127781-c544-4955-bf55-843bbf9a881f"
+        }
+    ]
+}
